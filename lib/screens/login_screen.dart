@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:learnium/constants.dart';
 import 'package:learnium/screens/splash_screen.dart';
+import 'package:learnium/screens/students/student_home.dart';
 import 'package:learnium/widgets/custom_button.dart';
 import 'package:learnium/widgets/custom_input.dart';
 
@@ -90,7 +91,12 @@ class _LoginScreenState extends State<LoginScreen> {
               width: size.width,
               size: size,
               radius: 10.0,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SutdentHomeScreen()));
+              },
             ),
             SizedBox(height: 20.0),
             Text(
