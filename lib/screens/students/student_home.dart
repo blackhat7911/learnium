@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:learnium/constants.dart';
+import 'package:learnium/screens/students/screens/explore.dart';
+import 'package:learnium/screens/students/screens/home.dart';
+import 'package:learnium/screens/students/screens/notifications.dart';
+import 'package:learnium/screens/students/screens/profile.dart';
 
 class SutdentHomeScreen extends StatefulWidget {
   @override
@@ -11,22 +15,16 @@ class _SutdentHomeScreenState extends State<SutdentHomeScreen> {
   int selectedIndex = 0;
 
   static const List<Widget> _widgets = [
-    Text("Home"),
-    Text("Explore"),
-    Text("Notifications"),
-    Text("Profile"),
+    LearnerHomeScreen(),
+    ExploreScreen(),
+    NotificationScreen(),
+    ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primaryColor,
-        leading: Icon(
-          Icons.menu,
-        ),
-      ),
-      body: Center(
+      body: SafeArea(
         child: _widgets.elementAt(selectedIndex),
       ),
       bottomNavigationBar: SnakeNavigationBar.color(
