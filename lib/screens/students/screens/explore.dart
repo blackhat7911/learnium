@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:learnium/constants.dart';
-import 'package:learnium/screens/students/screens/home.dart';
+import 'package:learnium/models/courses.dart';
 import 'package:learnium/widgets/course_section.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -12,6 +12,7 @@ class ExploreScreen extends StatefulWidget {
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
+  final courses = Courses.fetchAll();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,9 +58,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
               children: [
                 CourseSection(
                   title: "Recommended For You",
+                  course: courses,
                 ),
                 CourseSection(
                   title: "Popular",
+                  course: courses,
                 ),
               ],
             )

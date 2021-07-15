@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:learnium/constants.dart';
 
 class CustomInputBox extends StatelessWidget {
-
   final String? title, hint, error;
   final IconData? icon, suffixIcon;
   final bool? isInvisible;
   final TextEditingController? controller;
 
-  const CustomInputBox({
-    Key? key, 
-    this.title, 
-    this.hint, 
-    this.icon, 
-    this.suffixIcon, 
-    this.isInvisible, 
-    this.controller,
-    this.error
-  }) : super(key: key);
+  const CustomInputBox(
+      {Key? key,
+      this.title,
+      this.hint,
+      this.icon,
+      this.suffixIcon,
+      this.isInvisible,
+      this.controller,
+      this.error})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +26,11 @@ class CustomInputBox extends StatelessWidget {
         children: [
           Text(
             title!,
-            style: TextStyle(
-              fontSize: 18.0
-            ),
+            style: TextStyle(fontSize: 18.0),
           ),
           SizedBox(height: 10.0),
           Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 8.0,
-              vertical: 3.0
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 3.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
               color: inputBoxColor,
@@ -45,7 +39,7 @@ class CustomInputBox extends StatelessWidget {
               controller: controller,
               obscureText: isInvisible!,
               decoration: InputDecoration(
-                prefixIcon: Icon(icon),
+                prefixIcon: Icon(icon,),
                 suffixIcon: Icon(suffixIcon),
                 hintText: hint!,
                 errorText: error,

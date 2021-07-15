@@ -19,7 +19,10 @@ class NumberInputBox extends StatelessWidget {
         maxLength: 1,
         textAlignVertical: TextAlignVertical.center,
         keyboardType: TextInputType.number,
-        decoration: InputDecoration(border: InputBorder.none, counterText: ""),
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          counterText: "",
+        ),
       ),
     );
   }

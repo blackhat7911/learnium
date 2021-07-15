@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:learnium/screens/splash_screen.dart';
-
 void main() {
   runApp(MyApp());
 }
