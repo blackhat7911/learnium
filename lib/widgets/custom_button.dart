@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 
 class MyButton extends StatelessWidget {
   const MyButton({
     Key? key,
     required this.size,
     this.width,
-    this.title, 
-    this.onTap, 
+    this.title,
+    this.onTap,
     this.radius,
   }) : super(key: key);
 
@@ -22,16 +22,17 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width,
-        height: 40.0,
+        padding: EdgeInsets.symmetric(
+          horizontal: 10.0,
+          vertical: 15.0,
+        ),
         alignment: Alignment.center,
         child: Text(
           title!,
           style: TextStyle(color: whiteColor, fontSize: 16.0),
         ),
         decoration: BoxDecoration(
-          color: primaryColor,
-          borderRadius: BorderRadius.circular(radius!)
-        ),
+            color: primaryColor, borderRadius: BorderRadius.circular(radius!)),
       ),
     );
   }

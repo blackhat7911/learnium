@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 import 'package:learnium/screens/login_screen.dart';
 import 'package:learnium/screens/register_screen.dart';
 import 'package:learnium/widgets/custom_button.dart';
@@ -64,7 +64,7 @@ class SplashScreen extends StatelessWidget {
                         children: [
                           MyButton(
                             size: size,
-                            width: size.width * 0.49,
+                            width: size.width * 0.50,
                             title: "Login",
                             radius: 0,
                             onTap: () {
@@ -75,11 +75,11 @@ class SplashScreen extends StatelessWidget {
                             },
                           ),
                           SizedBox(
-                            width: 2.0,
+                            width: size.width * 0.01,
                           ),
                           MyButton(
                             size: size,
-                            width: size.width * 0.5,
+                            width: size.width * 0.49,
                             title: 'Register',
                             radius: 0,
                             onTap: () {

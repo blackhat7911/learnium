@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:learnium/screens/lecturer/nav_screens/withdraw_screen.dart';
 import 'package:learnium/utils/constants/constants.dart';
-import 'package:learnium/screens/students/screens/explore.dart';
-import 'package:learnium/screens/students/screens/home.dart';
 import 'package:learnium/screens/students/screens/notifications.dart';
 import 'package:learnium/screens/students/screens/profile.dart';
+import 'package:learnium/screens/lecturer/nav_screens/lecturer_home.dart';
 
-class SutdentHomeScreen extends StatefulWidget {
+class LecturerHomeScreen extends StatefulWidget {
   @override
-  _SutdentHomeScreenState createState() => _SutdentHomeScreenState();
+  _LecturerHomeScreenState createState() => _LecturerHomeScreenState();
 }
 
-class _SutdentHomeScreenState extends State<SutdentHomeScreen> {
+class _LecturerHomeScreenState extends State<LecturerHomeScreen> {
   int selectedIndex = 0;
 
   static const List<Widget> _widgets = [
-    LearnerHomeScreen(),
-    ExploreScreen(),
+    LecturerHomeNavScreen(),
+    WithdrawScreen(),
     NotificationScreen(),
     ProfileScreen(),
   ];
@@ -46,8 +46,8 @@ class _SutdentHomeScreenState extends State<SutdentHomeScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
+            icon: Icon(Icons.money),
+            label: 'Withdraw',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),

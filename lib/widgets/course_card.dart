@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -10,7 +10,7 @@ class CourseCard extends StatelessWidget {
     this.price,
     this.onTap,
     this.author,
-    this.rating,
+    required this.rating,
   }) : super(key: key);
 
   final String? name, imageUrl, author;
@@ -75,20 +75,14 @@ class CourseCard extends StatelessWidget {
                     ),
                     Container(
                       width: size.width,
-                      child: RatingBar.builder(
-                        initialRating: rating!,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemSize: 20.0,
+                      child: RatingBarIndicator(
+                        rating: rating!,
                         itemCount: 5,
-                        itemBuilder: (context, _) => Icon(
+                        itemSize: 20,
+                        itemBuilder: (context, index) => Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
                       ),
                     ),
                     SizedBox(

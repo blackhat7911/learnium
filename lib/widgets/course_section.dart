@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:learnium/models/courses.dart';
-import 'package:learnium/screens/students/screens/course_detail_screen.dart';
+import 'package:learnium/screens/students/course_detail_screen.dart';
 import 'package:learnium/widgets/course_card.dart';
 
 class CourseSection extends StatelessWidget {

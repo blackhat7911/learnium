@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 import 'package:learnium/screens/email_verify_screen.dart';
 import 'package:learnium/screens/splash_screen.dart';
 import 'package:learnium/widgets/custom_button.dart';
@@ -18,6 +18,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final usernameController = new TextEditingController();
   final passwordController = new TextEditingController();
   bool isChecked = false;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           style: TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.normal,
-            color: primaryColor,
+            color: blackColor,
           ),
         ),
         centerTitle: true,

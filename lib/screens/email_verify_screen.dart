@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
-import 'package:learnium/screens/students/profile_setup.dart';
+import 'package:learnium/utils/constants/constants.dart';
+import 'package:learnium/screens/profile_setup.dart';
 import 'package:learnium/widgets/custom_button.dart';
-import 'package:learnium/widgets/number_input_box.dart';
+import 'package:flutter_verification_code/flutter_verification_code.dart';
 
 class EmailVerifyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Verify Email',
+          style: TextStyle(color: blackColor),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: blackColor,
+            ),
+            onPressed: () {}),
+        backgroundColor: whiteColor,
+        elevation: 0,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -38,32 +53,11 @@ class EmailVerifyScreen extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    NumberInputBox(),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    NumberInputBox(),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    NumberInputBox(),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    NumberInputBox(),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    NumberInputBox(),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                  ],
-                ),
+              VerificationCode(
+                length: 5,
+                underlineColor: primaryColor,
+                onCompleted: (code) {},
+                onEditing: (bool value) {},
               ),
               SizedBox(
                 height: 20.0,
@@ -77,7 +71,7 @@ class EmailVerifyScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => StudentProfileSetup()));
+                          builder: (context) => ProfileSetUpScreen()));
                 },
               ),
               SizedBox(

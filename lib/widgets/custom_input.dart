@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 
 class CustomInputBox extends StatelessWidget {
   final String? title, hint, error;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 import 'package:learnium/models/courses.dart';
 import 'package:learnium/widgets/course_section.dart';
 

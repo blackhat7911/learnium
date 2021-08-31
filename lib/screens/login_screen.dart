@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/screens/lecturer/home_screen.dart';
+import 'package:learnium/utils/constants/constants.dart';
 import 'package:learnium/screens/splash_screen.dart';
 import 'package:learnium/screens/students/student_home.dart';
 import 'package:learnium/widgets/custom_button.dart';
@@ -18,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final usernameController = new TextEditingController();
   final passwordController = new TextEditingController();
   bool isChecked = false;
+  String dropDownValue = "Student";
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.normal,
-            color: primaryColor,
+            color: blackColor,
           ),
         ),
         centerTitle: true,
@@ -70,6 +72,37 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: passwordController,
             ),
             SizedBox(height: 20.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Role",
+                  style: TextStyle(fontSize: 18.0),
+                ),
+                Container(
+                  width: size.width * 0.9,
+                  child: DropdownButton(
+                    value: dropDownValue,
+                    underline: Container(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropDownValue = newValue!;
+                      });
+                    },
+                    items: <String>['Student', 'Lecturer']
+                        .map<DropdownMenuItem<String>>(
+                      (String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      },
+                    ).toList(),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.0),
             Container(
               child: Row(
                 children: [
@@ -86,16 +119,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
+            SizedBox(
+              width: 20.0,
+            ),
             MyButton(
               title: "Sign In",
               width: size.width,
               size: size,
               radius: 10.0,
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SutdentHomeScreen()));
+                if (dropDownValue == "Student") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SutdentHomeScreen()));
+                } else {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LecturerHomeScreen()));
+                }
               },
             ),
             SizedBox(height: 20.0),

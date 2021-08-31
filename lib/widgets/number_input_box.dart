@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnium/constants.dart';
+import 'package:learnium/utils/constants/constants.dart';
 
 class NumberInputBox extends StatelessWidget {
   const NumberInputBox({
