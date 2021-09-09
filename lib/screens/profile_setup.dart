@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:learnium/screens/email_verify_screen.dart';
 import 'package:learnium/screens/lecturer/home_screen.dart';
+import 'package:learnium/screens/payment_setup_screen.dart';
 import 'package:learnium/screens/students/student_home.dart';
 import 'package:learnium/widgets/custom_button.dart';
 import 'package:learnium/widgets/custom_input.dart';
@@ -139,7 +140,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                                     ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           SizedBox(
@@ -283,17 +284,11 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
               radius: 10,
               title: "Save and Continue",
               onTap: () {
-                if (dropDownValue == "Student") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => SutdentHomeScreen()));
-                } else {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LecturerHomeScreen()));
-                }
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            PaymentSetupScreen(userType: dropDownValue)));
               },
             ),
           ],

@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:learnium/screens/lecturer/nav_screens/withdraw_pt2.dart';
 import 'package:learnium/utils/constants/constants.dart';
 import 'package:learnium/widgets/custom_button.dart';
 
@@ -180,8 +181,10 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
               size: size,
               title: 'Withdraw',
               radius: 10,
-              onTap: () {},
-              width: size.width * 0.9,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => WithdrawCashCard()));
+              },
+              width: size.width * 0.95,
             ),
             SizedBox(
               height: 20,
