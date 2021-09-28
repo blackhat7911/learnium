@@ -113,16 +113,18 @@ class _PaymentSetupScreenState extends State<PaymentSetupScreen> {
               radius: 10,
               width: size.width * 0.9,
               onTap: () {
-                if (userType == "Student") {
+                if (userType == "Learner") {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SutdentHomeScreen(userType: "learner")));
+                          builder: (context) =>
+                              SutdentHomeScreen(userType: "learner")));
                 } else if (userType == "Lecturer") {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => LecturerHomeScreen(userType: "lecturer")));
+                          builder: (context) =>
+                              LecturerHomeScreen(userType: "lecturer")));
                 }
               },
             ),

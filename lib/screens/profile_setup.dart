@@ -25,7 +25,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
   final addressController = new TextEditingController();
   final dateController = new TextEditingController();
   final occupationController = new TextEditingController();
-  String dropDownValue = "Student";
+  String dropDownValue = "Learner";
 
   // Future pickPhoto(ImageSource source) async {
   //   final _pickImage = await _imagePicker.pickImage(source: source);
