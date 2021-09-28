@@ -117,12 +117,12 @@ class _PaymentSetupScreenState extends State<PaymentSetupScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SutdentHomeScreen()));
+                          builder: (context) => SutdentHomeScreen(userType: "learner")));
                 } else if (userType == "Lecturer") {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => LecturerHomeScreen()));
+                          builder: (context) => LecturerHomeScreen(userType: "lecturer")));
                 }
               },
             ),

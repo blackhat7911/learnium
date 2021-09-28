@@ -7,6 +7,9 @@ import 'package:learnium/screens/students/screens/profile.dart';
 import 'package:learnium/screens/lecturer/nav_screens/lecturer_home.dart';
 
 class LecturerHomeScreen extends StatefulWidget {
+  final String userType;
+  const LecturerHomeScreen({Key? key, required this.userType})
+      : super(key: key);
   @override
   _LecturerHomeScreenState createState() => _LecturerHomeScreenState();
 }
@@ -18,7 +21,7 @@ class _LecturerHomeScreenState extends State<LecturerHomeScreen> {
     LecturerHomeNavScreen(),
     WithdrawScreen(),
     NotificationScreen(),
-    ProfileScreen(),
+    ProfileScreen(userType: 'lecturer'),
   ];
 
   @override

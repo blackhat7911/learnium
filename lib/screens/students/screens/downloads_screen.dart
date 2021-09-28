@@ -23,8 +23,7 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
               color: blackColor,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()));
+              Navigator.pop(context);
             },
           ),
           title: const Text('Downloads', style: TextStyle(color: Colors.black)),

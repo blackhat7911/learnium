@@ -264,7 +264,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                         dropDownValue = newValue!;
                       });
                     },
-                    items: <String>['Student', 'Lecturer']
+                    items: <String>['Learner', 'Lecturer']
                         .map<DropdownMenuItem<String>>(
                       (String value) {
                         return DropdownMenuItem<String>(

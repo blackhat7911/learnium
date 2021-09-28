@@ -22,8 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: blackColor,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()));
+              Navigator.pop(context);
             },
           ),
           title: const Text('Settings', style: TextStyle(color: Colors.black)),

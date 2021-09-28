@@ -4,7 +4,8 @@ import 'package:learnium/screens/students/screens/downloads_screen.dart';
 import 'package:learnium/utils/constants/constants.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  final String userType;
+  const ProfileScreen({Key? key, required this.userType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +27,20 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_downward,
-                  color: blackColor,
+              Visibility(
+                visible: (userType == "learner") ? true : false,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_downward,
+                    color: blackColor,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DownloadsScreen()));
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DownloadsScreen()));
-                },
               ),
               IconButton(
                   icon: Icon(

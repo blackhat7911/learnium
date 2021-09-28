@@ -7,6 +7,8 @@ import 'package:learnium/screens/students/screens/notifications.dart';
 import 'package:learnium/screens/students/screens/profile.dart';
 
 class SutdentHomeScreen extends StatefulWidget {
+  final String userType;
+  const SutdentHomeScreen({required this.userType});
   @override
   _SutdentHomeScreenState createState() => _SutdentHomeScreenState();
 }
@@ -18,7 +20,7 @@ class _SutdentHomeScreenState extends State<SutdentHomeScreen> {
     LearnerHomeScreen(),
     ExploreScreen(),
     NotificationScreen(),
-    ProfileScreen(),
+    ProfileScreen(userType: 'learner'),
   ];
 
   @override

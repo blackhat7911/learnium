@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final usernameController = new TextEditingController();
   final passwordController = new TextEditingController();
   bool isChecked = false;
-  String dropDownValue = "Student";
+  String dropDownValue = "Learner";
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         dropDownValue = newValue!;
                       });
                     },
-                    items: <String>['Student', 'Lecturer']
+                    items: <String>['Learner', 'Lecturer']
                         .map<DropdownMenuItem<String>>(
                       (String value) {
                         return DropdownMenuItem<String>(
@@ -128,16 +128,22 @@ class _LoginScreenState extends State<LoginScreen> {
               size: size,
               radius: 10.0,
               onTap: () {
-                if (dropDownValue == "Student") {
+                if (dropDownValue == "Learner") {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SutdentHomeScreen()));
+                          builder: (context) => SutdentHomeScreen(
+                                userType: 'learner',
+                              )));
+                } else if (dropDownValue == "Lecturer") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LecturerHomeScreen(
+                                userType: 'lecturer',
+                              )));
                 } else {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LecturerHomeScreen()));
+                  print("Please select a role");
                 }
               },
             ),
