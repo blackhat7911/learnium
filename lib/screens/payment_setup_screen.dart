@@ -22,6 +22,7 @@ class _PaymentSetupScreenState extends State<PaymentSetupScreen> {
   TextEditingController numController = TextEditingController();
   TextEditingController dateController = TextEditingController();
   TextEditingController codeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
